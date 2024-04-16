@@ -249,6 +249,7 @@ async fn validate_executable(executable_path: String) -> Result<(), &'static str
         if byte.is_ascii_graphic() || byte == b' ' {
             current_string.push(byte);
         }
+      
         if current_string.len() != 25 {
             continue;
         }
@@ -266,7 +267,7 @@ async fn validate_executable(executable_path: String) -> Result<(), &'static str
         current_string.clear()
     }
 
-    Err("This is not krampus loader.")
+    Err("This isn't the Ro-Exec Loader, download it from acedia.")
 }
 
 #[tokio::main]
